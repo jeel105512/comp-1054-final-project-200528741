@@ -49,7 +49,7 @@ a {
     ;
 }
 
-p::before:not(.card p) {
+p:not(.no-before-after)::before {
     content: "< p >";
     display: block;
     padding: 0.3em;
@@ -57,7 +57,7 @@ p::before:not(.card p) {
     font-family: 'La Belle Aurore', cursive;
 }
 
-p::after:not(.card p) {
+p:not(.no-before-after)::after {
     content: "</p>";
     display: block;
     padding: 0.3em;
@@ -65,7 +65,7 @@ p::after:not(.card p) {
     font-family: 'La Belle Aurore', cursive;
 }
 
-h1::before:not(.card p) {
+h1:not(.no-before-after)::before {
     content: "<h1>";
     display: block;
     padding: 0.3em;
@@ -73,7 +73,7 @@ h1::before:not(.card p) {
     font-family: 'La Belle Aurore', cursive;
 }
 
-h1::after:not(.card p) {
+h1:not(.no-before-after)::after {
     content: "</h1>";
     display: block;
     padding: 0.3em;
@@ -97,7 +97,7 @@ h2::after {
     font-family: 'La Belle Aurore', cursive;
 }
 
-h3::before:not(.card p) {
+h3:not(.no-before-after)::before {
     content: "<h3>";
     display: block;
     padding: 0.3em;
@@ -105,7 +105,7 @@ h3::before:not(.card p) {
     font-family: 'La Belle Aurore', cursive;
 }
 
-h3::after:not(.card p) {
+h3:not(.no-before-after)::after {
     content: "</h3>";
     display: block;
     padding: 0.3em;
@@ -303,14 +303,14 @@ header a {
     padding: 1em 3em;
     color: #7fffd4;
     letter-spacing: 2px;
-
-    position: relative;
 }
 
 .projects-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 50%;
+    
+    position: relative;
 }
 
 .project {
@@ -325,9 +325,11 @@ header a {
 }
 
 .project-popup-content {
-    width: 50%;
-    height: 50%;
+    width: 45%;
+    height: 45%;
+    transform: translate(0%, 0%);
     scale: 0;
+    padding: 0.5em;
 
     background: #7fffd4;
     border-radius: 100%;
