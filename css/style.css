@@ -19,6 +19,7 @@
 
 html {
     background: rgb(40, 40, 40);
+    scroll-behavior: smooth;
 }
 
 html,
@@ -303,6 +304,7 @@ header a {
     padding: 1em 3em;
     color: #7fffd4;
     letter-spacing: 2px;
+    position: relative;
 }
 
 .projects-container {
@@ -694,4 +696,325 @@ header a {
     margin: 0.5em 0;
     font-size: 1.1rem;
     width: 100%;
+}
+
+form button{
+    background: none;
+    border: 1px solid #7fffd4;
+    padding: 0.8em 3em;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+form button a{
+    color: #7fffd4;
+}
+
+form button::before {
+    background: #7fffd4;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    transition: all 0.4s ease;
+}
+
+form button:hover a span {
+    color: #000;
+    position: relative;
+}
+
+form button:hover::before {
+    width: 100%;
+}
+
+/* Media Queries */
+@media (width < 1199px){ /* small desktop screen */
+    .project-popup-content {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .about-container {
+        gap: 2em;
+    }
+
+    #skills{
+        padding: 1em 5em;
+        height: 145%;
+    }
+
+    .contact-container form input:nth-of-type(1){
+        width: 49.7%;
+    }
+    
+    .contact-container form input:nth-of-type(2){
+        width: 49.7%;
+    }
+
+    body{
+        height: 110%;
+    }
+}
+
+@media (width < 991px){ /* tablet */
+    *{
+        /* outline: 1px solid #fff; */
+    }
+
+    body{
+        height: 125%;
+    }
+
+    header{
+        height: 70%;
+        gap: 1em;
+    }
+
+    header h1 {
+        font-size: 5rem;
+    }
+
+    #projects{
+        height: 150%;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+        height: 100%;
+    }
+
+    .screen {
+        aspect-ratio: 1 / 1;
+    }
+
+    #skills{
+        padding: 1em 5em;
+        height: 145%;
+    }
+}
+
+@media (width < 850px){
+
+    #about{
+        height: 150%;
+    }
+
+    #skills{
+        height: 155%;
+    }
+}
+
+@media (width < 767px){ /* mobile */
+    *{
+        /* outline: 1px dotted #fff; */
+    }
+
+    header{
+        height: 65%;
+    }
+
+    header h1 {
+        font-size: 4rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    #projects{
+        height: 115%;
+    }
+
+    #projects div:nth-of-type(1) {
+        flex-direction: column;
+    }
+
+    .projects-right {
+        justify-content: flex-start;
+    }
+
+    #about{
+        height: 130%;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-info {
+        flex: 1;
+    }
+    
+    .special-effect {
+        flex: 3;
+    } 
+    
+    .screen {
+        aspect-ratio: 1 / 1;
+    }
+
+    #skills{
+        height: 200%;
+    }
+
+    .skills-container{
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 4rem 1rem;
+    }
+
+    .card-content>h1 {
+        font-size: 3.3rem;
+    }
+    
+    .card-content>h3 {
+        font-size: 1rem;
+    }
+    
+    .card-content>p {
+        line-height: 2rem;
+    } 
+    
+    .contact-container form input:nth-of-type(1){
+        width: 100%;
+    }
+    
+    .contact-container form input:nth-of-type(2){
+        width: 100%;
+    }
+
+    body{
+        height: 140%;
+    }
+}
+@media (width < 640px){ /* This is the screen size of some mid-range Android devices. */
+    *{
+        /* outline: 1px dotted #fff; */
+    }
+
+    header,
+    #projects,
+    #about,
+    #skills,
+    #contact{
+        padding: 0 2em;
+    }
+
+    header h1 {
+        font-size: 3.7rem;
+    }
+    
+    #projects{
+        height: 120%;
+    }
+
+    #skills{
+        height: 190%;
+    }
+}
+
+@media (width < 591px){
+    header h1 {
+        font-size: 3.3rem;
+    }
+}
+
+@media (width < 548px){
+    #skills{
+        height: 210%;
+    }
+}
+
+@media (width < 480px){ /* This is the screen size of the iPhone 4 and earlier models. */
+    *{
+        /* outline: 1px dotted #fff; */
+    }
+
+    header{
+        height: 63%;
+    }
+
+    header h1 {
+        font-size: 2.8rem;
+    }
+
+    #projects{
+        height: 225%;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    #skills{
+        height: 135%;
+    }
+
+    .card {
+        padding: 2rem 0rem;
+    }
+
+    .card-content{
+        padding: 2rem;
+    }
+
+    .card-content>h1 {
+        font-size: 2.8rem;
+    }
+    
+    .card-content>h3 {
+        font-size: 0.8rem;
+    }
+    
+    .card-content>p {
+        line-height: 1.8rem;
+    } 
+
+    body{
+        height: 145%;
+    }   
+}
+
+@media (width < 450px){
+    header{
+        height: 61%;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    #skills{
+        height: 150%;
+    }
+}
+
+@media (width < 400px){
+    header h1 {
+        font-size: 2.3rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    #projects{
+        height: 220%;
+    }
+
+    #skills{
+        height: 150%;
+    }
+}
+
+@media (width < 396px){
+    header h1 {
+        font-size: 1.8rem;
+    }
 }
