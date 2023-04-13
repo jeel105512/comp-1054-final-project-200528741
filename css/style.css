@@ -1,8 +1,9 @@
 @import url(./reset.css);
 @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 
-* {
-    /* outline: 1px dotted #fff; */
+@font-face {
+    font-family: "Poppins";
+    src: url(../assets/Poppins-Regular.otf);
 }
 
 :root {
@@ -33,6 +34,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* group selector */
 h1,
 h2,
 h3 {
@@ -44,12 +46,14 @@ a {
     cursor: pointer;
 }
 
+/* pseudo element selectors */
 ::before,
 ::after {
     color: rgba(255, 255, 255, 0.2);
     ;
 }
 
+/* pseudo class selectors */
 p:not(.no-before-after)::before {
     content: "< p >";
     display: block;
@@ -240,6 +244,7 @@ header {
     gap: 2em;
 }
 
+/* descendant selector */
 header h1 {
     font-size: 6rem;
 }
@@ -285,6 +290,7 @@ header a {
 }
 
 .projects-left {
+    /* class selector */
     flex: 2;
     color: #fff;
     font-size: 1.25rem;
@@ -311,7 +317,7 @@ header a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 50%;
-    
+
     position: relative;
 }
 
@@ -554,7 +560,7 @@ header a {
 /* about ends */
 
 /* skills section */
-#skills{
+#skills {
     padding: 1em 5em;
     height: 120%;
 }
@@ -564,7 +570,7 @@ header a {
     color: #7fffd4;
 }
 
-.skills-container{
+.skills-container {
     display: grid;
     gap: 2em;
     grid-template-columns: repeat(2, 1fr);
@@ -579,16 +585,14 @@ header a {
     position: relative;
 }
 
-.card h2{
+.card h2 {
     font-weight: bold;
 }
 
-.card::after{
-    background: linear-gradient(
-        transparent,
-        #7fffd4,
-        transparent
-    );
+.card::after {
+    background: linear-gradient(transparent,
+            #7fffd4,
+            transparent);
     height: 70px;
     width: 1px;
     position: absolute;
@@ -598,10 +602,10 @@ header a {
     opacity: 0;
 
     transition: top 600ms ease,
-                opacity 600ms ease;
+        opacity 600ms ease;
 }
 
-.card:hover::after{
+.card:hover::after {
     top: 25%;
     opacity: 1;
 }
@@ -625,6 +629,7 @@ header a {
     text-align: center;
 }
 
+/* combinator selector */
 .card-content>h1 {
     color: rgb(250 249 246);
     font-size: 2.6rem;
@@ -644,30 +649,31 @@ header a {
 /* skills section end */
 
 /* contact section */
-#contact{
+#contact {
+    /* id selector */
     padding: 0 5em;
 }
 
-.contact-container{
+.contact-container {
     width: 100%;
     padding: 2em 0;
 }
 
-.contact-container h2{
+.contact-container h2 {
     font-size: 4rem;
     color: #7fffd4;
 }
 
-.contact-container p{
+.contact-container p {
     color: #fff;
     line-height: 1.5;
 }
 
-.contact-container form{
+.contact-container form {
     width: 100%;
 }
 
-.contact-container form input{
+.contact-container form input {
     color: #fff;
     border: none;
     background: #353535;
@@ -676,19 +682,19 @@ header a {
     font-size: 1.1rem;
 }
 
-.contact-container form input:nth-of-type(1){
+.contact-container form input:nth-of-type(1) {
     width: 49.8%;
 }
 
-.contact-container form input:nth-of-type(2){
+.contact-container form input:nth-of-type(2) {
     width: 49.8%;
 }
 
-.contact-container form input:nth-of-type(3){
+.contact-container form input:nth-of-type(3) {
     width: 100%;
 }
 
-.contact-container form textarea{
+.contact-container form textarea {
     color: #fff;
     border: none;
     background: #353535;
@@ -698,7 +704,7 @@ header a {
     width: 100%;
 }
 
-form button{
+form button {
     background: none;
     border: 1px solid #7fffd4;
     padding: 0.8em 3em;
@@ -707,7 +713,7 @@ form button{
     position: relative;
 }
 
-form button a{
+form button a {
     color: #7fffd4;
 }
 
@@ -732,44 +738,45 @@ form button:hover::before {
 }
 
 /* Media Queries */
-@media (width < 1199px){ /* small desktop screen */
+@media (width < 1199px) {
+
+    /* small desktop screen */
     .project-popup-content {
         width: 50%;
         height: 50%;
     }
-    
+
     .about-container {
         gap: 2em;
     }
 
-    #skills{
+    #skills {
         padding: 1em 5em;
         height: 145%;
     }
 
-    .contact-container form input:nth-of-type(1){
-        width: 49.7%;
-    }
-    
-    .contact-container form input:nth-of-type(2){
+    .contact-container form input:nth-of-type(1) {
         width: 49.7%;
     }
 
-    body{
+    .contact-container form input:nth-of-type(2) {
+        width: 49.7%;
+    }
+
+    body {
         height: 110%;
     }
 }
 
-@media (width < 991px){ /* tablet */
-    *{
-        /* outline: 1px solid #fff; */
-    }
+@media (width < 991px) {
 
-    body{
+    /* tablet */
+
+    body {
         height: 125%;
     }
 
-    header{
+    header {
         height: 70%;
         gap: 1em;
     }
@@ -778,7 +785,7 @@ form button:hover::before {
         font-size: 5rem;
     }
 
-    #projects{
+    #projects {
         height: 150%;
     }
 
@@ -791,29 +798,28 @@ form button:hover::before {
         aspect-ratio: 1 / 1;
     }
 
-    #skills{
+    #skills {
         padding: 1em 5em;
         height: 145%;
     }
 }
 
-@media (width < 850px){
+@media (width < 850px) {
 
-    #about{
+    #about {
         height: 150%;
     }
 
-    #skills{
+    #skills {
         height: 155%;
     }
 }
 
-@media (width < 767px){ /* mobile */
-    *{
-        /* outline: 1px dotted #fff; */
-    }
+@media (width < 767px) {
 
-    header{
+    /* mobile */
+
+    header {
         height: 65%;
     }
 
@@ -825,7 +831,7 @@ form button:hover::before {
         font-size: 1rem;
     }
 
-    #projects{
+    #projects {
         height: 115%;
     }
 
@@ -837,7 +843,7 @@ form button:hover::before {
         justify-content: flex-start;
     }
 
-    #about{
+    #about {
         height: 130%;
     }
 
@@ -848,20 +854,20 @@ form button:hover::before {
     .about-info {
         flex: 1;
     }
-    
+
     .special-effect {
         flex: 3;
-    } 
-    
+    }
+
     .screen {
         aspect-ratio: 1 / 1;
     }
 
-    #skills{
+    #skills {
         height: 200%;
     }
 
-    .skills-container{
+    .skills-container {
         grid-template-columns: 1fr;
     }
 
@@ -872,71 +878,70 @@ form button:hover::before {
     .card-content>h1 {
         font-size: 3.3rem;
     }
-    
+
     .card-content>h3 {
         font-size: 1rem;
     }
-    
+
     .card-content>p {
         line-height: 2rem;
-    } 
-    
-    .contact-container form input:nth-of-type(1){
-        width: 100%;
     }
-    
-    .contact-container form input:nth-of-type(2){
+
+    .contact-container form input:nth-of-type(1) {
         width: 100%;
     }
 
-    body{
+    .contact-container form input:nth-of-type(2) {
+        width: 100%;
+    }
+
+    body {
         height: 140%;
     }
 }
-@media (width < 640px){ /* This is the screen size of some mid-range Android devices. */
-    *{
-        /* outline: 1px dotted #fff; */
-    }
+
+@media (width < 640px) {
+
+    /* This is the screen size of some mid-range Android devices. */
 
     header,
     #projects,
     #about,
     #skills,
-    #contact{
+    #contact {
         padding: 0 2em;
     }
 
     header h1 {
         font-size: 3.7rem;
     }
-    
-    #projects{
+
+    #projects {
         height: 120%;
     }
 
-    #skills{
+    #skills {
         height: 190%;
     }
 }
 
-@media (width < 591px){
+@media (width < 591px) {
     header h1 {
         font-size: 3.3rem;
     }
 }
 
-@media (width < 548px){
-    #skills{
+@media (width < 548px) {
+    #skills {
         height: 210%;
     }
 }
 
-@media (width < 480px){ /* This is the screen size of the iPhone 4 and earlier models. */
-    *{
-        /* outline: 1px dotted #fff; */
-    }
+@media (width < 480px) {
 
-    header{
+    /* This is the screen size of the iPhone 4 and earlier models. */
+
+    header {
         height: 63%;
     }
 
@@ -944,7 +949,7 @@ form button:hover::before {
         font-size: 2.8rem;
     }
 
-    #projects{
+    #projects {
         height: 225%;
     }
 
@@ -952,7 +957,7 @@ form button:hover::before {
         grid-template-columns: 1fr;
     }
 
-    #skills{
+    #skills {
         height: 135%;
     }
 
@@ -960,29 +965,29 @@ form button:hover::before {
         padding: 2rem 0rem;
     }
 
-    .card-content{
+    .card-content {
         padding: 2rem;
     }
 
     .card-content>h1 {
         font-size: 2.8rem;
     }
-    
+
     .card-content>h3 {
         font-size: 0.8rem;
     }
-    
+
     .card-content>p {
         line-height: 1.8rem;
-    } 
+    }
 
-    body{
+    body {
         height: 145%;
-    }   
+    }
 }
 
-@media (width < 450px){
-    header{
+@media (width < 450px) {
+    header {
         height: 61%;
     }
 
@@ -990,12 +995,34 @@ form button:hover::before {
         font-size: 2.5rem;
     }
 
-    #skills{
+    #skills {
         height: 150%;
     }
 }
 
-@media (width < 400px){
+@media (width < 415px) {
+    * {
+        outline: 1px dotted #fff;
+    }
+
+    header {
+        height: 40%;
+    }
+
+    #projects {
+        height: 150%;
+    }
+
+    #skills {
+        height: 110%;
+    }
+
+    #contact {
+        height: 80%;
+    }
+}
+
+@media (width < 400px) {
     header h1 {
         font-size: 2.3rem;
     }
@@ -1004,17 +1031,39 @@ form button:hover::before {
         font-size: 0.8rem;
     }
 
-    #projects{
+    #projects {
         height: 220%;
     }
 
-    #skills{
+    #skills {
         height: 150%;
     }
 }
 
-@media (width < 396px){
+@media (width < 396px) {
     header h1 {
         font-size: 1.8rem;
+    }
+}
+
+@media (width < 391px) {
+    * {
+        outline: 1px dotted #fff;
+    }
+
+    header {
+        height: 30%;
+    }
+
+    #projects {
+        height: 160%;
+    }
+
+    #skills {
+        height: 125%;
+    }
+
+    #contact {
+        height: 90%;
     }
 }
